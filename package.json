@@ -17,8 +17,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "json-server": "json-server --watch db.json --port 8000"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
