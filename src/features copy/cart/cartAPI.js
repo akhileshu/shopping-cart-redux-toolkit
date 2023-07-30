@@ -1,17 +1,49 @@
-// A mock function to mimic making an async request for data
 import axios from "axios";
-export async function fetchItems() {
-  return await axios.get("http://localhost:8080/cart");
-}
-export async function addItem(item) {
 
-  return await axios.post("http://localhost:8080/cart",item);
+const API_BASE_URL = "/cart"; // Replace this with the correct API endpoint
+
+export async function fetchItems() {
+  try {
+    const response = await axios.get(API_BASE_URL);
+    return response.data;
+  } catch (error) {
+    // Handle errors appropriately
+    console.error("Error fetching items:", error);
+    throw error;
+  }
 }
+
+export async function addItem(item) {
+  try {
+    const response = await axios.post(API_BASE_URL, item);
+    return response.data;
+  } catch (error) {
+    // Handle errors appropriately
+    console.error("Error adding item:", error);
+    throw error;
+  }
+}
+
 export async function deleteItem(id) {
-  return await axios.delete(`http://localhost:8080/cart/${id}`);
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    // Handle errors appropriately
+    console.error("Error deleting item:", error);
+    throw error;
+  }
 }
-export async function updateItem(id,updatedItem) {
+
+export async function updateItem(id, updatedItem) {
+  try {
     // console to debug
-  // console.log(id,updatedItem)
-  return await axios.patch(`http://localhost:8080/cart/${id}`,updatedItem);
+    // console.log(id, updatedItem)
+    const response = await axios.patch(`${API_BASE_URL}/${id}`, updatedItem);
+    return response.data;
+  } catch (error) {
+    // Handle errors appropriately
+    console.error("Error updating item:", error);
+    throw error;
+  }
 }

@@ -1,5 +1,15 @@
-// A mock function to mimic making an async request for data
 import axios from "axios";
+
+const API_BASE_URL = "/products"; // Replace this with the correct API endpoint
+
 export async function fetchProducts() {
-  return await axios.get("http://localhost:8080/products");
+  try {
+    const response = await axios.get(API_BASE_URL);
+    return response.data;
+  } catch (error) {
+    // Handle errors appropriately
+    console.error("Error fetching products:", error);
+    throw error;
+  }
 }
+
