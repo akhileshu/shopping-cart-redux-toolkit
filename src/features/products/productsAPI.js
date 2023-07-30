@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://your-json-server-domain.com/products";
+const API_BASE_URL = "";
 
 export async function fetchProducts() {
   try {
