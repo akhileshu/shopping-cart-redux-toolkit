@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "/cart"; // Replace this with the correct API endpoint
+const API_BASE_URL = "https://your-json-server-domain.com/cart";
 
 export async function fetchItems() {
   try {
