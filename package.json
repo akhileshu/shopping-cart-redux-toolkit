@@ -20,6 +20,10 @@
     "build": "react-scripts build",
     "json-server": "json-server --watch db.json --port 8000"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.0.0"
+    
+  }
   
   "eslintConfig": {
     "extends": [
